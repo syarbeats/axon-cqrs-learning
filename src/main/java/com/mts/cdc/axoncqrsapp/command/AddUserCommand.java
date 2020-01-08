@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Data
-public class NewOrderCommand {
+public class AddUserCommand {
     private final String email;
     private final String password;
     private final String username;
@@ -14,7 +14,7 @@ public class NewOrderCommand {
     private final Integer id;
 
 
-    public NewOrderCommand(Integer id, String email, String password, String username, String firstname, String lastname) {
+    public AddUserCommand(Integer id, String email, String password, String username, String firstname, String lastname) {
         this.id = id;
         this.email = email;
         this.password = password;

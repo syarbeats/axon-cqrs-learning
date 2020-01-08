@@ -1,6 +1,6 @@
 package com.mts.cdc.axoncqrsapp.commandhandler;
 
-import com.mts.cdc.axoncqrsapp.command.NewOrderCommand;
+import com.mts.cdc.axoncqrsapp.command.AddUserCommand;
 import com.mts.cdc.axoncqrsapp.model.User;
 
 
@@ -23,9 +23,9 @@ public class UserCommandHandler {
     private Repository<User> userRepository;
 
     @CommandHandler
-    public void handle(NewOrderCommand newOrderCommand){
+    public void handle(AddUserCommand addUserCommand){
         log.info("Command Handler...");
-        User user = new User(newOrderCommand.getId(), newOrderCommand.getUsername(), newOrderCommand.getPassword(), true, newOrderCommand.getEmail(), newOrderCommand.getFirstname(), newOrderCommand.getLastname());
+        User user = new User(addUserCommand.getId(), addUserCommand.getUsername(), addUserCommand.getPassword(), true, addUserCommand.getEmail(), addUserCommand.getFirstname(), addUserCommand.getLastname());
         userRepository.add(user);
     }
 }
